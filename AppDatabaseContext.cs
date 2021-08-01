@@ -7,10 +7,12 @@ using WebServer.Models;
 
 namespace WebServer
 {
-    public class AppDatabaseContext: DbContext
+    public class AppDatabaseContext : DbContext
     {
-       
 
+        AppDatabaseContext(DbContextOptions<AppDatabaseContext> o) : base(o) 
+        { 
+        }
         DbSet<User>Users { get; set; }
     }
 
